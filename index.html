@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Record Management System</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Student Record Management System</h1>
+    <p>SAD Laboratory Exercise — CRUD with Supabase</p>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2 id="form-title">Add Student Record</h2>
+      <form id="student-form">
+        <input type="hidden" id="record-id" />
+
+        <label for="student_id">Student ID</label>
+        <input type="text" id="student_id" required />
+
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" required />
+
+        <label for="program">Program</label>
+        <input type="text" id="program" required />
+
+        <label for="year_level">Year Level</label>
+        <select id="year_level" required>
+          <option value="">-- Select --</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
+        </select>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <div class="form-buttons">
+          <button type="submit" id="save-btn">Save</button>
+          <button type="button" id="cancel-btn" style="display:none;">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="table-section">
+      <h2>Student Records</h2>
+      <table id="students-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Full Name</th>
+            <th>Program</th>
+            <th>Year Level</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="students-tbody">
+          <!-- rows injected by script.js -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Confirmation modal for delete -->
+  <div id="confirm-modal" class="modal hidden">
+    <div class="modal-box">
+      <p>Are you sure you want to delete this record?</p>
+      <div class="modal-buttons">
+        <button id="confirm-delete-btn">Yes, Delete</button>
+        <button id="cancel-delete-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>

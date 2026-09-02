@@ -1,0 +1,127 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #1e3a5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.form-section, .table-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  margin-bottom: 24px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 4px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.form-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+
+#save-btn { background: #1e7a46; color: white; }
+#cancel-btn { background: #999; color: white; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  text-align: left;
+}
+
+th {
+  background: #eef2f6;
+}
+
+.edit-btn { background: #d9a300; color: white; margin-right: 6px; }
+.delete-btn { background: #c0392b; color: white; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden { display: none; }
+
+.modal-box {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 280px;
+}
+
+.modal-buttons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+#confirm-delete-btn { background: #c0392b; color: white; }
+#cancel-delete-btn { background: #999; color: white; }
+
+@media (max-width: 600px) {
+  form { grid-template-columns: 1fr; }
+  table { font-size: 0.8em; }
+}
